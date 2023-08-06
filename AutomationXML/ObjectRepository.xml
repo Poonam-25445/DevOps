@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Modules>
+	<Home>
+		<ElementProperty NameOfElement="HomePageText" Type="cssSelector">.home-main .info</ElementProperty>
+		<ElementProperty NameOfElement="SearchTextBox" Type="id">search</ElementProperty>
+		<ElementProperty NameOfElement="SearchList" Type="cssSelector">#search_autocomplete li</ElementProperty>
+		<ElementProperty NameOfElement="SearchButton" Type="cssSelector">#search_mini_form button</ElementProperty>
+		<ElementProperty NameOfElement="SearchedItemGrid" Type="cssSelector">.products-grid ol</ElementProperty>
+		<ElementProperty NameOfElement="ShowCart" Type="className">showcart</ElementProperty>
+		<ElementProperty NameOfElement="CartPopup" Type="id">minicart-content-wrapper</ElementProperty>
+		<ElementProperty NameOfElement="CartInfo" Type="cssSelector">#minicart-content-wrapper .block-content strong</ElementProperty>
+		<ElementProperty NameOfElement="CartClose" Type="id">btn-minicart-close</ElementProperty>
+
+	</Home>
+	<Common>
+		<ElementProperty NameOfElement="DefaultLoginMsg" Type="cssSelector">div.panel.header li.greet.welcome > span</ElementProperty>
+		<ElementProperty NameOfElement="UserInfo" Type="cssSelector">header li.customer-welcome button</ElementProperty>
+		<ElementProperty NameOfElement="WelcomeList" Type="cssSelector">li.customer-welcome.active ul</ElementProperty>
+	</Common>
+	<Login>
+		<ElementProperty NameOfElement="SignInButton" Type="cssSelector">li.authorization-link a</ElementProperty>
+		<ElementProperty NameOfElement="UsernameTextBox" Type="id">email</ElementProperty>
+		<ElementProperty NameOfElement="PasswordTextBox" Type="id">pass</ElementProperty>
+		<ElementProperty NameOfElement="LoginButton" Type="cssSelector">button.login</ElementProperty>
+		<ElementProperty NameOfElement="LoginError" Type="cssSelector">div[data-bind="scope: 'messages'"]</ElementProperty>
+		<ElementProperty NameOfElement="ForgetPasswordButton" Type="cssSelector">#login-form > fieldset > div.actions-toolbar > div.secondary > a</ElementProperty>
+		<ElementProperty NameOfElement="WelcomeText" Type="cssSelector">li[class="greet welcome"] span.logged-in</ElementProperty>
+		<ElementProperty NameOfElement="InvalidUserError" Type="id">email-error</ElementProperty>
+	</Login>
+	<NewCustomerAccount>
+		<ElementProperty NameOfElement="CreateAccountButton" Type="cssSelector">a.action.create.primary</ElementProperty>
+		<ElementProperty NameOfElement="DefaultLoginMsg" Type="cssSelector">div.panel.header li.greet.welcome > span</ElementProperty>
+		<ElementProperty NameOfElement="SubmitCreateAccountForm" Type="cssSelector">.form-create-account button</ElementProperty>
+		<ElementProperty NameOfElement="FirstNameError" Type="id">firstname-error</ElementProperty>
+		<ElementProperty NameOfElement="LastNameError" Type="id">lastname-error</ElementProperty>
+		<ElementProperty NameOfElement="EmailError" Type="id">email_address-error</ElementProperty>
+		<ElementProperty NameOfElement="PasswordError" Type="id">password-error</ElementProperty>
+		<ElementProperty NameOfElement="PasswordConfirmationError" Type="id">password-confirmation-error</ElementProperty>
+		<ElementProperty NameOfElement="FirstName" Type="id">firstname</ElementProperty>
+		<ElementProperty NameOfElement="LastName" Type="id">lastname</ElementProperty>
+		<ElementProperty NameOfElement="Email" Type="id">email_address</ElementProperty>
+		<ElementProperty NameOfElement="Password" Type="id">password</ElementProperty>
+		<ElementProperty NameOfElement="PasswordConfirmation" Type="id">password-confirmation</ElementProperty>
+		<ElementProperty NameOfElement="SubscribeNewsLetterCheckbox" Type="id">is_subscribed</ElementProperty>
+	</NewCustomerAccount>
+	<Address>
+		<ElementProperty NameOfElement="ManageAddresses" Type="cssSelector">.block-dashboard-addresses .block-title a.action.edit</ElementProperty>
+		<ElementProperty NameOfElement="PageTitle" Type="className">page-title</ElementProperty>
+		<ElementProperty NameOfElement="AddNewAddress" Type="cssSelector">button[role="add-address"]</ElementProperty>
+		<ElementProperty NameOfElement="FirstName" Type="id">firstname</ElementProperty>
+		<ElementProperty NameOfElement="LastName" Type="id">lastname</ElementProperty>
+		<ElementProperty NameOfElement="Telephone" Type="id">telephone</ElementProperty>
+		<ElementProperty NameOfElement="Street" Type="id">street_1</ElementProperty>
+		<ElementProperty NameOfElement="City" Type="id">city</ElementProperty>
+		<ElementProperty NameOfElement="State" Type="id">region_id</ElementProperty>
+		<ElementProperty NameOfElement="ZipCode" Type="id">zip</ElementProperty>
+		<ElementProperty NameOfElement="Country" Type="id">country</ElementProperty>
+		<ElementProperty NameOfElement="SaveAddress" Type="cssSelector">button[title="Save Address"]</ElementProperty>
+		<ElementProperty NameOfElement="AddressTable" Type="id">additional-addresses-table</ElementProperty>
+		<ElementProperty NameOfElement="AddressTableRows" Type="cssSelector">#additional-addresses-table tbody tr</ElementProperty>
+		<ElementProperty NameOfElement="SavedAddressMessage" Type="cssSelector">div[data-ui-id="message-success"] div</ElementProperty>
+		<ElementProperty NameOfElement="EditAddress" Type="cssSelector">#additional-addresses-table a.action.edit</ElementProperty>
+		<ElementProperty NameOfElement="DeleteAddress" Type="cssSelector">#additional-addresses-table a.action.delete</ElementProperty>
+		<ElementProperty NameOfElement="TelephoneColumn" Type="cssSelector">#additional-addresses-table td[data-th="Phone"]</ElementProperty>
+		<ElementProperty NameOfElement="ModalPopup" Type="id">modal-content-18</ElementProperty>
+		<ElementProperty NameOfElement="ModelPopupFooter" Type="cssSelector">.modal-inner-wrap .modal-footer</ElementProperty>
+	</Address>
+</Modules>

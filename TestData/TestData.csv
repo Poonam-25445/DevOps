@@ -1,0 +1,8 @@
+testSuccessfulLogin,poonam@nagarro.com,Admin1234,Home Page,,,,,,,,,,
+testUnsuccessfulLogin,test@gmail.com,admin123,zysd,Please enter a valid email address (Ex: johndoe@domain.com).,Incorrect CAPTCHA,,,,,,,,
+testNewCustomerAccount,Create New Customer Account,FirstName,LastName,Email,Password,Password-confirmation,,,,,,,
+testAddAddress,poonam@nagarro.com,Admin1234,Address Book,Add New Address,You saved the address.,Poonam,Verma,9999999999,Testing-123,Delhi,Georgia,12345,United States
+testEditAddress,poonam@nagarro.com,Admin1234,Edit Address,1234567890,You saved the address.
+testDeleteAddress,poonam@nagarro.com,Admin1234,OK,Are you sure you want to delete this address?,You deleted the address.,
+testSearchItem,New Luma Yoga Collection,Troy yoga short,Search results for: 'Troy yoga short'
+testCart,You have no items in your shopping cart.

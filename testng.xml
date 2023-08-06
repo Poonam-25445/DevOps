@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not include the "DOCTYPE" tag as the grammar does not let you use beanshell script -->
+<suite name="Suite" thread-count="8" data-provider-thread-count="1" parallel="classes">
+	<listeners>
+		<listener class-name="com.nagp.listeners.TestNGListeners" />
+	</listeners>
+	<test name="UIAutomationTestCase">
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="webdriverHost" value="LOCALHOST"></parameter>
+		<parameter name="webdriverPort" value="4444"></parameter>
+		<parameter name="platform" value="WINDOWS" />
+
+		<classes>
+			<class name="com.nagp.test.Test_VerifyLoginFunctionality" />
+			<class name="com.nagp.test.Test_VerifySearchItemFunctionality" />
+			<class name="com.nagp.test.Test_VerifyNewCustomerFunctionality" />
+		</classes>
+
+	</test>
+</suite> <!-- Suite -->
