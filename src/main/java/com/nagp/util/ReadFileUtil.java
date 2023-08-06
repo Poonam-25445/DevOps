@@ -72,20 +72,20 @@ public class ReadFileUtil {
 					NodeList moduleList = tempNode.getChildNodes();
 					for (int j = 0; j < moduleList.getLength(); j++) {
 						Node moduleNode = moduleList.item(j);
-						if (moduleNode.getNodeType() == Node.ELEMENT_NODE && moduleNode.getNodeName() == module) {
+						if (moduleNode.getNodeType() == Node.ELEMENT_NODE && moduleNode.getNodeName().equals(module)) {
 							if (moduleNode.hasChildNodes()) {
 								NodeList childList = moduleNode.getChildNodes();
 								for (int i = 0; i < childList.getLength(); i++) {
 									Node childNode = childList.item(i);
 									if (childNode.getNodeType() == Node.ELEMENT_NODE
-											&& childNode.getNodeName().toString() == "ElementProperty") {
+											&& childNode.getNodeName().toString().equals("ElementProperty")) {
 										if (childNode.hasAttributes()) {
 											// get attributes names and values
 											NamedNodeMap nodeMap = childNode.getAttributes();
 											for (int k = 0; k < nodeMap.getLength(); k++) {
 
 												Node node = nodeMap.item(k);
-												if (node.getNodeName() == "NameOfElement") {
+												if (node.getNodeName().equals("NameOfElement")) {
 													if (node.getNodeValue().equals(variablename)) {
 														valueOfElement.add(childNode.getTextContent());
 														Node propertyType = nodeMap.getNamedItem("Type");
