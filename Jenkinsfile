@@ -18,7 +18,7 @@ pipeline {
                 cleanWs()
                 
                 // Clone the repository
-                git branch: 'main', url: 'https://github.com/Poonam-25445/DevOps.git'
+                git branch: 'master', url: 'https://github.com/Poonam-25445/DevOps.git'
             }
          }
          

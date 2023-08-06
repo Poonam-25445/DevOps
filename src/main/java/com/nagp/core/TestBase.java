@@ -1,7 +1,9 @@
 package com.nagp.core;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import org.apache.commons.io.FileUtils;
@@ -171,11 +173,22 @@ public class TestBase {
 	 */
 	@AfterSuite(alwaysRun = true)
 	protected void afterSuite() throws Exception {
+		prepareFiles();
 		LoggingManager.getConsoleLogger().info(" : TestBase - AfterSuite called");
 		LoggingManager.getInstance().writeTestReport();
 		CommonUtil.setScreenshotRelativePath();
 		String zipFilePath = Config.ZipPath + CommonUtil.getCurrentResultDirectory(Config.TestReportFolder, Config.CurrentTestResultPrefix).getName() + ".zip";
 		CommonUtil.zipFolder(Paths.get(Config.ScreenShotsPath), Paths.get(zipFilePath));
 		LoggingManager.getConsoleLogger().info("---------------EXECUTION COMPLETED--------------------");
+	}
+	
+	private void prepareFiles() {
+		try {
+			File f = new File(Config.ExtentReportsPath);
+			Files.createDirectories(Paths.get(Config.ScreenShotsPath));
+			f.createNewFile();
+		} catch(IOException e) {
+			
+		}
 	}
 }
