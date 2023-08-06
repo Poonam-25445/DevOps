@@ -186,9 +186,12 @@ public class TestBase {
 		try {
 			File f = new File(Config.ExtentReportsPath);
 			Files.createDirectories(Paths.get(Config.ScreenShotsPath));
-			f.createNewFile();
+			boolean isFileCreated = f.createNewFile();
+			if(isFileCreated) {
+				LoggingManager.getConsoleLogger().info("---------------NEW FILE CREATED--------------------");
+			}
 		} catch(IOException e) {
-			
+			LoggingManager.getConsoleLogger().info("---------------IOException--------------------");
 		}
 	}
 }
