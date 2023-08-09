@@ -3,7 +3,7 @@
 	<groupId>com.nagarro.nagp</groupId>
 	<artifactId>selenium-assignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SeleniumAutomation</name>
+	<name>SeleniumFramework</name>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
