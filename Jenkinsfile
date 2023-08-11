@@ -33,11 +33,17 @@ pipeline {
             }
         }
          
-        stage('SonarQube analysis') {
+        stage('SonarQube analysis and Test Execution') {
             steps {
               withSonarQubeEnv('SonarQube') {
-                bat 'mvn clean package -DskipTests sonar:sonar'
+                bat 'mvn clean test -Dmaven.test.failure.ignore=true sonar:sonar'
               }
+            }
+            post {
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    testNG reportFilenamePattern: 'target/surefire-reports/testng-results.xml'
+                }
             }
         }
         
@@ -48,21 +54,7 @@ pipeline {
               }
             }
         }
-        
-        stage('Run Selenium Tests') {
-            steps {
-                bat "mvn test -Dmaven.test.failure.ignore=true"
-            }
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                    testNG reportFilenamePattern: 'target/surefire-reports/testng-results.xml'
-                }
-            }
-        }
+
         
         stage("Publish to Artifactory") {
             steps {
