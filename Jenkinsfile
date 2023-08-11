@@ -2,9 +2,13 @@ pipeline {
     agent any
 
     environment{
-       HOME = "."
+       MAVEN_HOME = '${M2_HOME}'
     }
     
+    triggers {
+        cron('H/30 16 * * 5')
+    }
+  
     options{
          skipDefaultCheckout()
          buildDiscarder(logRotator(daysToKeepStr: '', numToKeepStr: '10'))
@@ -21,6 +25,13 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/Poonam-25445/DevOps.git'
             }
          }
+        
+        stage('Build') {
+            steps {
+                // To run Maven on a Windows agent, use
+                bat "mvn -Dmaven.test.failure.ignore=true clean install -DskipTests"
+            }
+        }
          
         stage('SonarQube analysis') {
             steps {
@@ -36,15 +47,6 @@ pipeline {
                 waitForQualityGate abortPipeline: true
               }
             }
-          }
-            
-        stage('Build') {
-            steps {
-
-                // To run Maven on a Windows agent, use
-                bat "mvn -Dmaven.test.failure.ignore=true clean install -DskipTests"
-            }
-
         }
         
         stage('Run Selenium Tests') {
@@ -57,7 +59,27 @@ pipeline {
                 success {
                     junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
+                    testNG reportFilenamePattern: 'target/surefire-reports/testng-results.xml'
                 }
+            }
+        }
+        
+        stage("Publish to Artifactory") {
+            steps {
+                rtMavenDeployer(
+                    id:'deployer',
+                    serverId: 'Jfrog_Artifactory',
+                    releaseRepo: 'NAGPDevOpsRepo',
+                    snapshotRepo: 'NAGPDevOpsRepo'
+                )
+                rtMavenRun(
+                    pom: 'pom.xml',
+                    goals: 'clean install',
+                    deployerId: 'deployer'
+                )
+                rtPublishBuildInfo(
+                    serverId: 'Jfrog_Artifactory',
+                )
             }
         }
     }
